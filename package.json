@@ -1,0 +1,24 @@
+{
+  "name": "webpack-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fionaVg1/webpack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fionaVg1/webpack/issues"
+  },
+  "homepage": "https://github.com/fionaVg1/webpack#readme",
+  "description": "",
+  "dependencies": {
+    "commander": "^4.1.0"
+  }
+}
