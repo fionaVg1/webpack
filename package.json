@@ -11,7 +11,7 @@
     "url": "git+https://github.com/fionaVg1/webpack.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "fiona_cai",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fionaVg1/webpack/issues"
@@ -20,5 +20,16 @@
   "description": "",
   "dependencies": {
     "commander": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.0",
+    "@babel/core": "^7.8.0",
+    "@babel/plugin-transform-runtime": "^7.8.0",
+    "@babel/preset-env": "^7.8.0",
+    "@babel/runtime": "^7.8.0",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4"
   }
 }

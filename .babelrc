@@ -1,0 +1,20 @@
+//其实就是options:{}里面的内容
+ {   
+    "presets":[
+        ["@babel/preset-env",{
+            "targets":{
+               
+                //全球市场率大于1%的浏览器作为目标
+                "browsers":[">1%"]
+                //如果以node 10为目标，是支持es6的语法的，就不会编译为es5了
+                // node:'10',
+                //chrome59 是支持es6的语法的，就不会编译为es5了
+                // chrome:'59'
+            }
+        }]
+    ],
+    "plugins":[
+        ["@babel/transform-runtime"]
+    ]
+}
+ 
