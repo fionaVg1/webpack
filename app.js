@@ -1,3 +1,3 @@
-import f1 from './module1.js'
-f1();
-let b = 2;
+import './app.css';
+import './index.css';
+console.log(123);

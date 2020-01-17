@@ -1,25 +1,19 @@
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    // entry:'./app.js',
-    // entry:['./app.js','./app2.js'],
-    //这个比较常用
+    mode:'development',
     entry:{
-        app:'./index.js',
-        // app:['babel-polyfill','./index.js'],
-        // app2:'./app2.js'
+        app:'./index.js',    
+        app2:'./app2.js'    
     },
-    output:{
-        //path是一个绝对路径，如果没有path，则path默认为__dirname+dist
-        // path:__dirname+'/src/bundle',
-        // filename:'bundle.js'
-        //name为entry中的指向key值,hash为默认随机字符串，hash:4为截取前4个
-        filename:'[name].[hash:4].js'//app.hkgd.js
+    output:{        
+        filename:'[name].js'//app.hkgd.js
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
                 exclude:'/node_modules/',
-                //use 是使用哪个loader来处理对应的文件
                 use:{
                     loader:'babel-loader',                                     
                 }
@@ -27,13 +21,58 @@ module.exports = {
             {
                 test:/\.tsx?$/,          
                 use:'ts-loader',              
-            }          
+            },
+            {
+                // test: /\.less$/,
+                test: /\.css$/,                
+                use:ExtractTextPlugin.extract({              
+                    fallback:{
+                        loader: 'style-loader',
+                        options:{                         
+                            insert:'#mydiv',
+                            injectType: "singletonStyleTag"
+                        }
+                    },
+                    use:[
+                        {                   
+                            loader: 'css-loader',                           
+                        },{
+                            loader:'postcss-loader',
+                            options:{
+                                ident:'postcss',
+                                plugins:[
+                                    require('autoprefixer')({
+                                        overrideBrowserslist:[
+                                            '>1%'
+                                        ]
+                                    }),
+                                    require('postcss-cssnext')()
+                                ]
+                            }
+                        },
+                        {
+                            loader:'less-loader'
+                        } 
+                    ]
+                })
+            }         
         ]
     },
-    plugins:[
-        // new webpack.DefinePlugin({
-        //     'process.env':require('../config/dev.env')
-        // }),
-        // new webpack.HotModuleReplacementPlugin()
+    plugins:[       
+        new ExtractTextPlugin({
+            filename:'[name].min.css'
+        }),
+        new HtmlWebpackPlugin({
+            //必须指定filename和template
+            filename:'index.html',
+            template:'./index.html',
+            // minify:{
+            //     collapseWhitespace:true,//压缩
+            // },
+            // //是否将js和css自动引入
+            // inject:true,
+            // //多入口的时候chunks作用就出来，指定要哪一个入口生成的文件
+            chunks:['app']
+        })
     ]
 }
