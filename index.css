@@ -1,0 +1,17 @@
+div{
+    color: white;
+}
+:global .border-white{
+    border: 4px solid white;
+}
+:local(.div1){
+    width: 50px;
+    height: 50px;
+    background-color: teal;
+    /**继承**/
+    /* composes:border-white; */
+    /**
+    *跨文件继承
+    composes:border-yellow from './app.css';
+    **/
+}

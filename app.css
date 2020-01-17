@@ -1,0 +1,7 @@
+*{
+    background-color: red;
+}
+.border-yello{
+    border: 10px solid yellow;
+    display:flex;
+}
