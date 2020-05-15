@@ -1,37 +1,40 @@
-
 module.exports = {
     // entry:'./app.js',
     // entry:['./app.js','./app2.js'],
     //这个比较常用
-    entry:{
-        app:['babel-polyfill','./app.js'],
+    entry: {
+        // app:['babel-polyfill','./app.js'],
         // app:['babel-polyfill','./index.js'],
-        // app2:'./app2.js'
+        app: './app2.js'
     },
-    output:{
+    output: {
         //path是一个绝对路径，如果没有path，则path默认为__dirname+dist
         // path:__dirname+'/src/bundle',
         // filename:'bundle.js'
         //name为entry中的指向key值,hash为默认随机字符串，hash:4为截取前4个
-        filename:'[name].[hash:4].js'//app.hkgd.js
+        filename: '[name].[hash:4].js' //app.hkgd.js
+    },
+    mode: 'production',
+    optimization: {
+        // usedExports: true,
+        // sideEffects: false
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.js$/,
-                exclude:'/node_modules/',
+                exclude: '/node_modules/',
                 //use 是使用哪个loader来处理对应的文件
-                use:{
-                    loader:'babel-loader',                                     
+                use: {
+                    loader: 'babel-loader',
                 }
-            } ,
+            },
             {
-                test:/\.tsx?$/,          
-                use:'ts-loader',              
-            }          
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+            }
         ]
     },
-    plugins:[
+    plugins: [
         // new webpack.DefinePlugin({
         //     'process.env':require('../config/dev.env')
         // }),
