@@ -1,36 +1,38 @@
 {
-    "name": "webpack-cli",
-    "version": "1.0.0",
-    "main": "index.js",
-    "bin": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/fionaVg1/webpack.git"
-    },
-    "keywords": [],
-    "author": "fiona_cai",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/fionaVg1/webpack/issues"
-    },
-    "homepage": "https://github.com/fionaVg1/webpack#readme",
-    "description": "",
-    "dependencies": {
-        "commander": "^4.1.0"
-    },
-    "devDependencies": {
-        "@babel/cli": "^7.8.0",
-        "@babel/core": "^7.8.0",
-        "@babel/plugin-transform-runtime": "^7.8.0",
-        "@babel/preset-env": "^7.8.0",
-        "@babel/runtime": "^7.8.0",
-        "babel-loader": "^8.0.6",
-        "babel-polyfill": "^6.26.0",
-        "ts-loader": "^6.2.1",
-        "typescript": "^3.7.4"
-    }
+  "name": "webpack-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fionaVg1/webpack.git"
+  },
+  "keywords": [],
+  "author": "fiona_cai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fionaVg1/webpack/issues"
+  },
+  "homepage": "https://github.com/fionaVg1/webpack#readme",
+  "description": "",
+  "dependencies": {
+    "commander": "^4.1.0",
+    "uglify-js": "^3.10.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.0",
+    "@babel/core": "^7.8.0",
+    "@babel/plugin-transform-runtime": "^7.8.0",
+    "@babel/preset-env": "^7.8.0",
+    "@babel/runtime": "^7.8.0",
+    "babel-loader": "^8.0.6",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "babel-polyfill": "^6.26.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4"
+  }
 }
