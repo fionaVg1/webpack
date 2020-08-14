@@ -1,4 +1,3 @@
-import './app.ts'
 setTimeout(()=>{
     console.log('fiona');
 },500);

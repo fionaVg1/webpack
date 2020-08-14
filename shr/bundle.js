@@ -1,0 +1,1 @@
+var globalVar;function funcName(a,o){var l=a+o;console.log(l)}
