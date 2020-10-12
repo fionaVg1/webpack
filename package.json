@@ -5,7 +5,8 @@
   "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "build:dll": "webpack --config webpack.dll.js"
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,12 @@
     "babel-loader": "^8.0.6",
     "babel-minify-webpack-plugin": "^0.3.1",
     "babel-polyfill": "^6.26.0",
+    "happypack": "^5.0.1",
+    "html-webpack-plugin": "^4.5.0",
+    "jquery": "^3.5.1",
+    "terser-webpack-plugin": "^4.2.3",
     "ts-loader": "^6.2.1",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.4",
+    "uglifyjs-webpack-plugin": "^2.2.0"
   }
 }
